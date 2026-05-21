@@ -1,5 +1,5 @@
 name: ROOT
 version: ~
-title: Example Documentation
+title: Aplicaciones Móviles con Elixir y Mob
 nav:
   - modules/ROOT/nav.adoc

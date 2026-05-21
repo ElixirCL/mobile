@@ -1,6 +1,6 @@
 site:
-  title: Example Documentation
-  url: https://ninjascl.github.io/antora-docs-bootstrap
+  title: Aplicaciones Móviles con Elixir y Mob
+  url: https://elixircl.github.io/mobile
   start_page: "ROOT::index.adoc"
 
 content:
@@ -28,7 +28,7 @@ asciidoc:
     idseparator: "-"
     page-pagination: ""
     highlightjs-theme: monokai
-    highlightjs-languages: js, elixir, sql, yaml, html, css, c, python, ada, objc
+    highlightjs-languages: js, elixir, sql, yaml, html, css, c, python, ada, objective-c
 
 ui:
   bundle:
