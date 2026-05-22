@@ -1,0 +1,5 @@
+= Buscador de Aves Chilenas
+
+En éste capítulo se creará una aplicación 
+que permita buscar un catálogo de aves chilenas
+conectadas a una API REST.

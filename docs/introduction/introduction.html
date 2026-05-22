@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Introducción a Mob :: Aplicaciones Móviles con Elixir y Mob</title>
+    <link rel="canonical" href="https://elixircl.github.io/mobile/introduction/introduction.html">
+    <link rel="prev" href="../index.html">
+    <link rel="next" href="configuration.html">
+    <meta name="generator" content="Antora 3.1.14">
+    <link rel="stylesheet" href="../_/css/site.css">
+    <link rel="stylesheet" href="../_/js/vendor/styles/monokai.css">  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://elixircl.github.io/mobile">Aplicaciones Móviles con Elixir y Mob</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Buscar">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <!--
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    -->
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">Aplicaciones Móviles con Elixir y Mob</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Inicio</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="introduction.html">Introducción a Mob</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configuration.html">Configurar Entorno de Desarrollo</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Proyecto 1: Calculadora</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../calculator/calculator.html">Calculadora</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Proyecto 2: Conversor de Divisas</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../conversor/conversor.html">Conversor de Divisas</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Proyecto 3: Buscador de Aves</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../birds/birds.html">Buscador de Aves Chilenas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Aplicaciones Móviles con Elixir y Mob</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">Aplicaciones Móviles con Elixir y Mob</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Aplicaciones Móviles con Elixir y Mob</a></li>
+    <li>Inicio</li>
+    <li><a href="introduction.html">Introducción a Mob</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///antora/./modules/introduction/pages/introduction.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contenidos" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Introducción a Mob</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Una aplicación móvil se comunica con un servidor, maneja notificaciones push mientras está en segundo plano, gestiona el estado local, transmite datos, procesa la entrada del usuario — todo de forma concurrente, todo el tiempo. La mayoría de los frameworks fingen que esto no es cierto y te obligan a ensamblarlo todo a partir de callbacks, promesas, máquinas de estados y trabajadores en segundo plano. Pasas más tiempo cableando la fontanería de la concurrencia que construyendo tu aplicación.</p>
+</div>
+<div class="paragraph">
+<p>El <em>BEAM</em> fue diseñado en 1986 para centrales telefónicas — sistemas que manejan millones de conexiones concurrentes, nunca fallan y se actualizan a sí mismos mientras están en funcionamiento. No obtuvo estas propiedades por accidente. Son el objetivo principal. Cuando ejecutas el BEAM en un teléfono, lo obtienes todo.</p>
+</div>
+<div class="paragraph">
+<p><em>Mob</em> es un <strong>framework móvil BEAM-on-device para Elixir.</strong> <em>OTP</em> se ejecuta dentro de tus aplicaciones <em>iOS</em> y <em>Android</em> — incrustado directamente en el paquete de la aplicación, sin necesidad de servidor. Las pantallas son <em>GenServers</em>; la interfaz de usuario se renderiza mediante <em>Compose</em> y <em>SwiftUI</em> a través de una <em>NIF</em> delgada.</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="_images/diag-eb4a76fd5ecf43a7b7a4545e027a666b9450ca00.svg" alt="Ciclo de Vida de una Aplicación con Mob">
+</div>
+<div class="title">Figure 1. Ciclo de Vida de una Aplicación con Mob</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ejemplo"><a class="anchor" href="#ejemplo"></a>Ejemplo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>El siguiente código crea una aplicación con un <em>WebView</em>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Webview</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-elixir hljs" data-lang="elixir">defmodule MyApp.WebViewScreen do
+  use Mob.Screen
+
+  def mount(_params, _session, socket) do
+    {:ok, Mob.Socket.assign(socket, last_msg: nil)}
+  end
+
+  def render(assigns) do
+    ~MOB"""
+    &lt;Column background={:background} fill_width={true} fill_height={true}&gt;
+      &lt;Text text="WebView" text_size={:lg} text_color={:on_surface} padding={:space_md} /&gt;
+      {status_row(assigns)}
+      &lt;WebView url="https://www.google.com" show_url={true} weight={1} /&gt;
+    &lt;/Column&gt;
+    """
+  end
+
+  defp status_row(%{last_msg: nil}) do
+    ~MOB(&lt;Text text="Waiting for JS bridge event..." text_size={:sm} text_color={:muted} padding={:space_sm} /&gt;)
+  end
+  defp status_row(%{last_msg: msg}) do
+    text = "JS-&gt;Elixir: #{inspect(msg)}"
+    ~MOB(&lt;Text text={text} text_size={:sm} text_color={:primary} padding={:space_sm} /&gt;)
+  end
+
+  def handle_info({:webview, :message, data}, socket) do
+    socket = Mob.WebView.post_message(socket, %{"echo" =&gt; data})
+    {:noreply, Mob.Socket.assign(socket, last_msg: data)}
+  end
+
+  def handle_info(_msg, socket), do: {:noreply, socket}
+end</code></pre>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="../index.html">Aplicaciones Móviles con Elixir y Mob</a></span>
+  <span class="next"><a href="configuration.html">Configurar Entorno de Desarrollo</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      ignoreHtmlClass: 'nostem|no-mathjax'
+    }
+  };
+</script>
+<script id="MathJax-script" async src="../_/js/vendor/tex-chtml.js"></script>  </body>
+</html>

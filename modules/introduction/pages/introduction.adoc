@@ -1,0 +1,84 @@
+= Introducción a Mob
+
+Una aplicación móvil se comunica con un servidor, maneja notificaciones push mientras está en segundo plano, gestiona el estado local, transmite datos, procesa la entrada del usuario — todo de forma concurrente, todo el tiempo. La mayoría de los frameworks fingen que esto no es cierto y te obligan a ensamblarlo todo a partir de callbacks, promesas, máquinas de estados y trabajadores en segundo plano. Pasas más tiempo cableando la fontanería de la concurrencia que construyendo tu aplicación.
+
+El _BEAM_ fue diseñado en 1986 para centrales telefónicas — sistemas que manejan millones de conexiones concurrentes, nunca fallan y se actualizan a sí mismos mientras están en funcionamiento. No obtuvo estas propiedades por accidente. Son el objetivo principal. Cuando ejecutas el BEAM en un teléfono, lo obtienes todo.
+
+_Mob_ es un *framework móvil BEAM-on-device para Elixir.* _OTP_ se ejecuta dentro de tus aplicaciones _iOS_ y _Android_ — incrustado directamente en el paquete de la aplicación, sin necesidad de servidor. Las pantallas son _GenServers_; la interfaz de usuario se renderiza mediante _Compose_ y _SwiftUI_ a través de una _NIF_ delgada.
+
+.Ciclo de Vida de una Aplicación con Mob
+[plantuml]
+----
+@startuml
+start
+:Tu aplicación Elixir
+(GenServers, supervisión OTP,
+ pattern matching, pipes);
+
+:Mob.Screen
+(GenServer — tu lógica vive aquí);
+
+:Mob.Renderer
+(árbol de componentes → JSON → llamada NIF);
+
+fork
+   :Compose (Android)
+   (renderizado nativo, gestos nativos);
+fork again
+   :SwiftUI (iOS)
+   (renderizado nativo, gestos nativos);
+endfork
+stop
+@enduml
+----
+
+== Ejemplo
+
+El siguiente código crea una aplicación con un _WebView_.
+
+.Webview
+[source, elixir]
+----
+defmodule MyApp.WebViewScreen do
+  use Mob.Screen
+
+  def mount(_params, _session, socket) do
+    {:ok, Mob.Socket.assign(socket, last_msg: nil)}
+  end
+
+  def render(assigns) do
+    ~MOB"""
+    <Column background={:background} fill_width={true} fill_height={true}>
+      <Text text="WebView" text_size={:lg} text_color={:on_surface} padding={:space_md} />
+      {status_row(assigns)}
+      <WebView url="https://www.google.com" show_url={true} weight={1} />
+    </Column>
+    """
+  end
+
+  defp status_row(%{last_msg: nil}) do
+    ~MOB(<Text text="Waiting for JS bridge event..." text_size={:sm} text_color={:muted} padding={:space_sm} />)
+  end
+  defp status_row(%{last_msg: msg}) do
+    text = "JS->Elixir: #{inspect(msg)}"
+    ~MOB(<Text text={text} text_size={:sm} text_color={:primary} padding={:space_sm} />)
+  end
+
+  def handle_info({:webview, :message, data}, socket) do
+    socket = Mob.WebView.post_message(socket, %{"echo" => data})
+    {:noreply, Mob.Socket.assign(socket, last_msg: data)}
+  end
+
+  def handle_info(_msg, socket), do: {:noreply, socket}
+end
+----
+
+== Actualizaciones OTA
+
+Las actualizaciones _OTA_ (Over-The-Air) son un método para enviar nuevas versiones de software, correcciones de errores o mejoras de seguridad a un dispositivo de forma remota, a través de una red inalámbrica como Wi-Fi o datos móviles, sin necesidad de una conexión física como un cable USB.
+
+La mayoría de las aplicaciones tratan una actualización como un reemplazo binario completo — compilar, enviar a revisión, publicar, esperar que los usuarios la instalen. Debido a que la _BEAM_ separa el código del estado, puedes enviar nuevos módulos a una aplicación en ejecución y estos surten efecto de inmediato. Los procesos activos toman el nuevo código en su próxima llamada a una función. Sin reinicio. Sin sesión perdida. Sin esperar en la App Store para los cambios en Elixir.
+
+Combinado con la distribución bajo demanda (iniciar una conexión de clúster, recibir nuevos códigos, desconectar), las actualizaciones _OTA_ se convierten en una funcionalidad de primera clase, no en un workaround de la plataforma.
+
+En esencia, las actualizaciones _OTA_ son el estándar moderno para mantener dispositivos y aplicaciones siempre actualizados, ofreciendo una experiencia fluida y eficiente tanto para los desarrolladores como para los usuarios finales

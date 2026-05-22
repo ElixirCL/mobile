@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Conversor de Divisas :: Aplicaciones Móviles con Elixir y Mob</title>
+    <link rel="canonical" href="https://elixircl.github.io/mobile/conversor/conversor.html">
+    <link rel="prev" href="../calculator/calculator.html">
+    <link rel="next" href="../birds/birds.html">
+    <meta name="generator" content="Antora 3.1.14">
+    <link rel="stylesheet" href="../_/css/site.css">
+    <link rel="stylesheet" href="../_/js/vendor/styles/monokai.css">  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://elixircl.github.io/mobile">Aplicaciones Móviles con Elixir y Mob</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Buscar">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <!--
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    -->
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">Aplicaciones Móviles con Elixir y Mob</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Inicio</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../introduction/introduction.html">Introducción a Mob</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../introduction/configuration.html">Configurar Entorno de Desarrollo</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Proyecto 1: Calculadora</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../calculator/calculator.html">Calculadora</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Proyecto 2: Conversor de Divisas</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="conversor.html">Conversor de Divisas</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Proyecto 3: Buscador de Aves</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../birds/birds.html">Buscador de Aves Chilenas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Aplicaciones Móviles con Elixir y Mob</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">Aplicaciones Móviles con Elixir y Mob</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Aplicaciones Móviles con Elixir y Mob</a></li>
+    <li>Proyecto 2: Conversor de Divisas</li>
+    <li><a href="conversor.html">Conversor de Divisas</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///antora/./modules/conversor/pages/conversor.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contenidos" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Conversor de Divisas</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>En este capítulo se realizará un conversor de divisas simple,
+con el objetivo de demostrar el uso de base de datos <em>SQLite</em>
+con <em>Mob</em>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="archivo-uf-db"><a class="anchor" href="#archivo-uf-db"></a>Archivo uf.db</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Se creará un conversor de <em>UF</em> a <em>CLP</em>, para esto se dispone
+de una base de datos (<em>uf.db</em>) con los valores por día de la <em>UF</em> desde
+el día <em>1977-08-01</em> hasta el día <em>2026-06-09</em>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>La Unidad de Fomento (UF) es un índice de reajustabilidad, calculado y
+autorizado por el Banco Central de Chile, para las operaciones de crédito
+de dinero en moneda nacional que efectúen las empresas bancarias y las
+cooperativas de ahorro y crédito.</p>
+</div>
+<div class="paragraph">
+<p>Para fines del cálculo de este índice, el valor de la UF se reajusta a partir del día
+diez de cada mes y hasta el día nueve del mes siguiente, en forma diaria, de
+acuerdo a la variación experimentada por el Índice de Precios al Consumidor
+(IPC) que determina el Instituto Nacional de Estadísticas (INE) o el organismo
+que lo reemplace en el mes calendario inmediatamente anterior al período para
+el cual la UF se calcula y publica.</p>
+</div>
+<div class="paragraph">
+<p>(Banco Central de Chile, 2026)</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>La tabla simplemente tiene la siguiente estructura</p>
+</div>
+<div class="listingblock">
+<div class="title">Tabla de valores de UF por fecha</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE TABLE uf_values (
+	period NVARCHAR(50) UNIQUE,
+	uf NUMERIC
+);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Tendrá los valores dados por el Banco Central de Chile (<a href="https://si3.bcentral.cl/Indicadoressiete/secure/IndicadoresDiarios.aspx" class="bare">https://si3.bcentral.cl/Indicadoressiete/secure/IndicadoresDiarios.aspx</a>).</p>
+</div>
+<div class="listingblock">
+<div class="title">Ejemplo de datos en uf.db</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csv hljs" data-lang="csv">period,uf
+1977-08-01,389.10
+1977-08-02,389.51
+1977-08-03,389.91
+1977-08-04,390.32
+1977-08-05,390.73
+1977-08-06,391.14
+1977-08-07,391.55
+1977-08-08,391.96
+1977-08-09,392.37
+1977-08-10,392.85
+1977-08-11,393.34
+1977-08-12,393.83
+1977-08-13,394.31
+1977-08-14,394.80
+1977-08-15,395.29
+1977-08-16,395.77</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Una consulta de ejemplo para obtener el valor de <em>2 UF</em>  (UF a CLP) para el 18 de Octubre de 1989 sería la siguiente:</p>
+</div>
+<div class="listingblock">
+<div class="title">Query UF a CLP</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">SELECT period, uf, (uf * 2) AS value FROM uf_values WHERE period = '1989-10-18' LIMIT 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Una consulta de ejemplo para obtener el valor de <em>10280.14 CLP</em>  (CLP a UF) para el 18 de Octubre de 1989 sería la siguiente:</p>
+</div>
+<div class="listingblock">
+<div class="title">Query UF a CLP</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">SELECT period, uf, (10280.14 / uf) AS value FROM uf_values WHERE period = '1989-10-18' LIMIT 1</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="paso-1-crear-la-aplicación"><a class="anchor" href="#paso-1-crear-la-aplicación"></a>Paso 1: Crear la aplicación</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>El primer paso es crear nuestro proyecto utilizando <code>mob.new</code> y <code>mob.install</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Crear proyecto</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ mix mob.new conversor_uf
+$ cd conversor_uf
+$ mix mob.install</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="paso-2-pantalla-principal"><a class="anchor" href="#paso-2-pantalla-principal"></a>Paso 2: Pantalla Principal</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ahora se debe crear la pantalla donde estará el conversor.
+Para esto se ha creado un prototipo en imagen que muestra una interfaz
+propuesta para esta aplicación.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/prototype.png" alt="Pantalla Principal">
+</div>
+<div class="title">Figure 1. Pantalla Principal</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="referencias"><a class="anchor" href="#referencias"></a>Referencias</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Banco Central de Chile. (2026). Unidad de Fomento (UF) [PDF]. <a href="https://si3.bcentral.cl/estadisticas/Principal1/Metodologias/EMF/UF.pdf" class="bare">https://si3.bcentral.cl/estadisticas/Principal1/Metodologias/EMF/UF.pdf</a></p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="../calculator/calculator.html">Calculadora</a></span>
+  <span class="next"><a href="../birds/birds.html">Buscador de Aves Chilenas</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      ignoreHtmlClass: 'nostem|no-mathjax'
+    }
+  };
+</script>
+<script id="MathJax-script" async src="../_/js/vendor/tex-chtml.js"></script>  </body>
+</html>

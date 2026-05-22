@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://elixircl.github.io/mobile/birds/birds.html</loc>
+<lastmod>2026-05-22T13:27:39.025Z</lastmod>
+</url>
+<url>
+<loc>https://elixircl.github.io/mobile/calculator/calculator.html</loc>
+<lastmod>2026-05-22T13:27:39.025Z</lastmod>
+</url>
+<url>
+<loc>https://elixircl.github.io/mobile/conversor/conversor.html</loc>
+<lastmod>2026-05-22T13:27:39.025Z</lastmod>
+</url>
+<url>
 <loc>https://elixircl.github.io/mobile/index.html</loc>
-<lastmod>2026-05-21T17:28:30.654Z</lastmod>
+<lastmod>2026-05-22T13:27:39.025Z</lastmod>
+</url>
+<url>
+<loc>https://elixircl.github.io/mobile/introduction/configuration.html</loc>
+<lastmod>2026-05-22T13:27:39.025Z</lastmod>
+</url>
+<url>
+<loc>https://elixircl.github.io/mobile/introduction/introduction.html</loc>
+<lastmod>2026-05-22T13:27:39.025Z</lastmod>
 </url>
 </urlset>

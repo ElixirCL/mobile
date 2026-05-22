@@ -1,0 +1,5 @@
+= Calculadora
+
+En este capítulo se creará una calculadora sencilla
+que permita demostrar las capacidades de _Mob_ para 
+generar interfaces, responder a eventos y efectuar lógica de negocio.

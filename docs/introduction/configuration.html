@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Configurar Entorno de Desarrollo :: Aplicaciones Móviles con Elixir y Mob</title>
+    <link rel="canonical" href="https://elixircl.github.io/mobile/introduction/configuration.html">
+    <link rel="prev" href="introduction.html">
+    <link rel="next" href="../calculator/calculator.html">
+    <meta name="generator" content="Antora 3.1.14">
+    <link rel="stylesheet" href="../_/css/site.css">
+    <link rel="stylesheet" href="../_/js/vendor/styles/monokai.css">  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://elixircl.github.io/mobile">Aplicaciones Móviles con Elixir y Mob</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Buscar">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <!--
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    -->
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">Aplicaciones Móviles con Elixir y Mob</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Inicio</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="introduction.html">Introducción a Mob</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="configuration.html">Configurar Entorno de Desarrollo</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Proyecto 1: Calculadora</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../calculator/calculator.html">Calculadora</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Proyecto 2: Conversor de Divisas</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../conversor/conversor.html">Conversor de Divisas</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Proyecto 3: Buscador de Aves</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../birds/birds.html">Buscador de Aves Chilenas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Aplicaciones Móviles con Elixir y Mob</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">Aplicaciones Móviles con Elixir y Mob</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Aplicaciones Móviles con Elixir y Mob</a></li>
+    <li>Inicio</li>
+    <li><a href="configuration.html">Configurar Entorno de Desarrollo</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///antora/./modules/introduction/pages/configuration.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contenidos" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Configurar Entorno de Desarrollo</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>En este capítulo se verá la configuración inicial necesaria
+para lograr utilizar los ecosistemas de <em>Android</em> e <em>iOS</em>
+con <em>Mob</em>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="instalación"><a class="anchor" href="#instalación"></a>Instalación</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Para instalar <em>Mob</em> y crear un nuevo proyecto se debe usar el comando</p>
+</div>
+<div class="listingblock">
+<div class="title">mob_new</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ mix archive.install hex mob_new</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Esto instalará el comando <code>mob</code> el cual puede ser usado con <code>mix mob.*</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="instalación-de-dependencias"><a class="anchor" href="#instalación-de-dependencias"></a>Instalación de Dependencias</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Al ser un framework de aplicaciones móviles requiere de la instalación de las herramientas de Xcode (iOS)
+y Android Studio (Android).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Xcode es exclusivo de computadores Apple.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Se recomienda la utilización de los gestores de paquetes: mise (<a href="https://mise.jdx.dev" class="bare">https://mise.jdx.dev</a>) y brew (<a href="https://brew.sh/" class="bare">https://brew.sh/</a>)</p>
+</div>
+<div class="paragraph">
+<p>Antes de usar mob debemos instalar las siguientes dependencias:</p>
+</div>
+<div class="sect2">
+<h3 id="elixir"><a class="anchor" href="#elixir"></a>Elixir</h3>
+<div class="paragraph">
+<p>Para la versión de <code>Mob 0.6.14</code> se debe tener las siguientes versiones de Elixir y Erlang</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Erlang 29: <a href="https://www.erlang.org/" class="bare">https://www.erlang.org/</a> (<code>$ mise use -g erlang@29</code>)</p>
+</li>
+<li>
+<p>Elixir 1.20: <a href="https://elixir-lang.org/" class="bare">https://elixir-lang.org/</a> (<code>$ mise use -g elixir@1.20.0-rc.5-otp-29</code>)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ver la guía de instalación de Erlang y Elixir para las dependencias</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="android"><a class="anchor" href="#android"></a>Android</h3>
+<div class="paragraph">
+<p>Instalar Android Studio: <a href="https://developer.android.com/studio" class="bare">https://developer.android.com/studio</a></p>
+</div>
+<div class="sect3">
+<h4 id="java"><a class="anchor" href="#java"></a>Java</h4>
+<div class="paragraph">
+<p>Es necesario Java 21 como máximo. Para esto se instalará <code>temurin</code> que viene preconfigurado.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>temurin (Java 21): (<code>$ brew install --cask temurin@21</code>).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ndk"><a class="anchor" href="#ndk"></a>NDK</h4>
+<div class="paragraph">
+<p>Para Mob <code>0.6.14</code> se debe instalar <code>NDK 27.2.12479018</code>.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Android Studio → SDK Manager → SDK Tools → NDK (Side by side)</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Para versiones más recientes de <em>Mob</em> se debe revisar el archivo de configuración
+<code>lib/mob_dev/ndk_version.ex</code> en el atributo <code>@recommended</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="platform-tools"><a class="anchor" href="#platform-tools"></a>Platform Tools</h4>
+<div class="paragraph">
+<p>También en el SDK Manager de Android Studio instalar las herramientas de línea de comandos.
+<code>Android SDK Build-Tools</code> y <code>Android SDK Command-line Tools</code>. Ambas con la versión predefinida.
+La usada en <code>Mob 0.6.14</code> es la <code>API 34</code>.</p>
+</div>
+<div class="paragraph">
+<p>Se debe verificar que las rutas de acceso estén en la variable de entorno de la terminal.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">ANDROID_HOME=$HOME/Library/Android/sdk
+PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/build-tools/latest</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Al ejecutar el comando <code>adb version</code> debería mostrar algo similar a lo siguiente:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">adb version
+Android Debug Bridge version 1.0.41
+Version 36.0.2-14143358
+Installed as /Users/user/Library/Android/sdk/platform-tools/adb
+Running on Darwin 25.3.0 (arm64)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="xcode"><a class="anchor" href="#xcode"></a>Xcode</h3>
+<div class="paragraph">
+<p>Instalar Xcode: <a href="https://developer.apple.com/xcode/" class="bare">https://developer.apple.com/xcode/</a></p>
+</div>
+<div class="sect3">
+<h4 id="xcode-command-line-tools"><a class="anchor" href="#xcode-command-line-tools"></a>Xcode Command Line Tools</h4>
+<div class="paragraph">
+<p>Se debe instalar las herramientas de línea de comandos de <em>Xcode</em>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ xcode-select --install</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Se debe mostrar algo similar a lo siguiente:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ xcode-select -p
+/Applications/Xcode.app/Contents/Developer</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="herramientas-de-apoyo"><a class="anchor" href="#herramientas-de-apoyo"></a>Herramientas de Apoyo</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Zig: <a href="https://ziglang.org/" class="bare">https://ziglang.org/</a> (<code>$ mise use -g zig</code>)</p>
+</li>
+<li>
+<p>ideviceinfo: (<code>$ brew install libimobiledevice</code>)</p>
+</li>
+<li>
+<p>Python3: <a href="https://www.python.org/downloads/" class="bare">https://www.python.org/downloads/</a> (<code>$ mise use -g python</code>)</p>
+</li>
+<li>
+<p>Rsync: <a href="https://formulae.brew.sh/formula/rsync" class="bare">https://formulae.brew.sh/formula/rsync</a> (<code>$ brew install rsync</code>)</p>
+</li>
+<li>
+<p>Idb: (<code>$ brew install facebook/fb/idb-companion</code>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="crear-un-nuevo-proyecto"><a class="anchor" href="#crear-un-nuevo-proyecto"></a>Crear un nuevo proyecto</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ahora tenemos todo lo necesario para crear una aplicación con <em>Mob</em> para esto ejecutamos
+el comando <code>mob.new</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ mix mob.new mi_app</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Debería mostrar algo como lo siguiente:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Your Mob app mi_app is ready!
+
+    cd mi_app
+    mix mob.install                # generates app icon + first-run setup
+
+    mix mob.provision              # iOS only, one-time: register bundle ID
+                                   # + download provisioning profile (skip if
+                                   # you're only running on the simulator)
+
+First deploy — edit mob.exs and android/local.properties with your local paths, then build native binaries
+(APK + iOS app), install on device, and push BEAMs:
+
+    mix mob.deploy --native        # first time, or after native code changes
+
+Day-to-day development — just push changed BEAMs, no native rebuild needed:
+
+    mix mob.deploy                 # fast push + restart
+    mix mob.watch                  # auto-push on file save</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ahora hacemos <code>cd mi_app</code> y ejecutamos, <code>mix mob.install</code> seguido de  <code>mix mob.doctor</code> para verificar que este todo bien configurado.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ cd mi_app</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ahora ejecutamos <code>mix mob.install</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ mix mob.install</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Y verificamos que este bien configurado con <code>mix mob.doctor</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">mob.doctor</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">$ mix mob.doctor
+=== Mob Doctor ===
+
+Tools
+  ✓ version manager — mise (/Users/camilo/.local/bin/mise)
+  ✓ Elixir — 1.20.0-rc.5
+  ✓ OTP — 29 (ERTS 17.0)
+  ✓ Hex — 2.4.2
+  ✓ epmd — /Users/camilo/.local/share/mise/installs/erlang/29.0/erts-17.0/bin/epmd
+  ✓ adb — /Users/camilo/Library/Android/sdk/platform-tools/adb
+  ✓ xcrun — Xcode 26.5
+  ✓ zig — 0.16.0
+  ✓ java — openjdk version "21.0.11" 2026-04-21 LTS
+  ✓ Android SDK — /Users/camilo/Library/Android/sdk
+  ✓ Android NDK — 27.2.12479018 (recommended) ✓
+  ✓ python3 — /usr/bin/python3
+  ✓ rsync — /usr/bin/rsync
+  ✓ ideviceinfo — /opt/homebrew/bin/ideviceinfo
+
+Project
+  ✓ mob.exs — found
+  ✓ mob_dir — /Users/camilo/Developer/jasonelle.com/v4/mi_app/deps/mob
+  ⚠ bundle_id — not set in mob.exs (only needed for mob.battery_bench)
+      Add to mob.exs: config :mob_dev, bundle_id: "com.example.myapp"
+
+Build
+  ✓ mix deps — 47 deps fetched
+  ✓ compiled — 1466 BEAMs in 47 lib(s)
+
+OTP Cache
+  ✓ OTP Android — otp-android-d9045670 (erts-17.0)
+  ✓ OTP iOS simulator — otp-ios-sim-d9045670 (erts-17.0)
+
+Devices
+  ⚠ Android devices — none authorized
+      Connect a device via USB (enable USB Debugging) or start an emulator.
+      See: https://developer.android.com/studio/debug/dev-options
+  ✓ iOS simulator — iPhone 16e (D4E176CD-5769-45FF-AAF2-4BBEAB204803)
+
+2 warning(s) — optional items above may limit some features.</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ios"><a class="anchor" href="#ios"></a>iOS</h3>
+<div class="paragraph">
+<p>Vamos a probar la aplicación en un simulador de iOS.</p>
+</div>
+<div class="paragraph">
+<p>Para eso listamos los simuladores disponibles</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ xcrun simctl list</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Debería mostrar un listado de opciones disponibles.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">...
+== Devices ==
+-- iOS 26.2 --
+    iPhone 17 Pro (6DF2A610-B574-4BDE-9E3D-A281F7842D71) (Shutdown)
+    iPhone 17 Pro Max (5C291515-F930-410E-8036-9BE1DFB9BB30) (Shutdown)
+    iPhone Air (B568F0D8-E030-43CB-990A-F32A8AC759AB) (Shutdown)
+    iPhone 17 (1A9056B1-DC9E-4046-9649-0361790BB92B) (Shutdown)
+    iPhone 16e (D4E176CD-5769-45FF-AAF2-4BBEAB204803) (Shutdown)
+    iPad Pro 13-inch (M5) (CC4A3E59-5F0D-4F6B-B622-FF2B076D1245) (Shutdown)
+    iPad Pro 11-inch (M5) (E0EE6E84-A5C6-4CAE-BE0A-2F330C908AA5) (Shutdown)
+    iPad mini (A17 Pro) (E6D5FF90-1E1C-43D6-8E1F-BF3F261841F2) (Shutdown)
+    iPad (A16) (2EB53E9D-059F-4995-96D8-56E66691D9E7) (Shutdown)
+    iPad Air 13-inch (M3) (05D7C9B4-9834-4EB6-8D1E-8EE32A4D8F44) (Shutdown)
+    iPad Air 11-inch (M3) (D80FC49C-1654-4C8E-9A80-66D0F09653D5) (Shutdown)
+-- iOS 26.4 --
+    iPhone 17 Pro (1B57FB9E-D942-462D-B8AE-776D7FB53391) (Shutdown)
+    iPhone 17 Pro Max (574B8EDA-410F-4AB8-9A63-0CBA1A341CA6) (Shutdown)
+    iPhone 17e (19535F16-F908-47F7-A1D3-33594A573609) (Shutdown)
+    iPhone Air (497D60C3-506B-4517-AE54-6A55FC7708B4) (Shutdown)
+    iPhone 17 (DED5CF13-529A-4610-AF3F-8D76349C32ED) (Shutdown)
+    iPad Pro 13-inch (M5) (B537DE2E-C74A-456B-BD45-8DEC09A7039C) (Shutdown)
+    iPad Pro 11-inch (M5) (9318579F-D8AD-4075-A1CE-4DD82E520DE0) (Shutdown)
+    iPad mini (A17 Pro) (C51DE0E4-9FB8-428A-BB6F-FD7F833D8FAA) (Shutdown)
+    iPad Air 13-inch (M4) (FC2E2C0E-A849-4378-AFD8-2AFFAAF6E78A) (Shutdown)
+    iPad Air 11-inch (M4) (D5D6E897-1E0D-4FBB-8822-833AD92E276C) (Shutdown)
+    iPad (A16) (C5C71011-4895-430A-BB27-9DD8FE43B4FD) (Shutdown)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Para este caso podremos usar un <strong>iPhone 16e</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ xcrun simctl boot "iPhone 16e"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Y lo abrimos para verificar.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ open -a Simulator</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finalmente podremos instalar la aplicación en el simulador.</p>
+</div>
+<div class="paragraph">
+<p>La primera vez es necesario utilizar la opción <code>--native</code> para la compilación
+de las dependencias.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ mix mob.deploy --native --ios</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Para posteriores instalaciones solo se debe añadir los archivos <code>.beam</code> modificados.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ mix mob.deploy --ios</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Al abrir la aplicación en el simulador debería mostrar una pantalla similar a la siguiente:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/ios.png" alt="iPhone Simulator" width="30%">
+</div>
+<div class="title">Figure 1. Mob Demo iOS</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="android-2"><a class="anchor" href="#android-2"></a>Android</h3>
+<div class="paragraph">
+<p>Para android se debe instalar un emulador con Android Studio → Device Manager.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/device-manager.png" alt="Android" width="50%">
+</div>
+<div class="title">Figure 2. Device Manager Android</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Notar que el emulador debe estar ejecutandose</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Luego simplemente ejecutar <code>mob.deploy --android</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ mix mob.deploy --native --android</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Para posteriores instalaciones solo se debe añadir los archivos <code>.beam</code> modificados.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ mix mob.deploy --android</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/android.png" alt="Android" width="30%">
+</div>
+<div class="title">Figure 3. Mob Demo Android</div>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="introduction.html">Introducción a Mob</a></span>
+  <span class="next"><a href="../calculator/calculator.html">Calculadora</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      ignoreHtmlClass: 'nostem|no-mathjax'
+    }
+  };
+</script>
+<script id="MathJax-script" async src="../_/js/vendor/tex-chtml.js"></script>  </body>
+</html>
